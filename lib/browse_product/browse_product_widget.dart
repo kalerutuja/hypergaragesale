@@ -208,7 +208,7 @@ class _BrowseProductWidgetState extends State<BrowseProductWidget> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        170, 0, 0, 0),
+                                        190, 0, 0, 0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -224,8 +224,19 @@ class _BrowseProductWidgetState extends State<BrowseProductWidget> {
                                           ),
                                           showLoadingIndicator: true,
                                           onPressed: () async {
-                                            context
-                                                .pushNamed('PostDetailsPage');
+                                            context.pushNamed(
+                                              'PostDetailsPage',
+                                              queryParams: {
+                                                'itemRefID': serializeParam(
+                                                  taskListColumnItemRecord,
+                                                  ParamType.Document,
+                                                ),
+                                              }.withoutNulls,
+                                              extra: <String, dynamic>{
+                                                'itemRefID':
+                                                    taskListColumnItemRecord,
+                                              },
+                                            );
                                           },
                                         ),
                                       ],

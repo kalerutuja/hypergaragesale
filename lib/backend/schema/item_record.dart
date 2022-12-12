@@ -26,6 +26,9 @@ abstract class ItemRecord implements Built<ItemRecord, ItemRecordBuilder> {
 
   String? get uid;
 
+  @BuiltValueField(wireName: 'photo_url')
+  String? get photoUrl;
+
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
@@ -36,7 +39,8 @@ abstract class ItemRecord implements Built<ItemRecord, ItemRecordBuilder> {
     ..shortBio = ''
     ..mediaUrl = ListBuilder()
     ..isDone = false
-    ..uid = '';
+    ..uid = ''
+    ..photoUrl = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('item');
@@ -64,6 +68,7 @@ Map<String, dynamic> createItemRecordData({
   String? shortBio,
   bool? isDone,
   String? uid,
+  String? photoUrl,
 }) {
   final firestoreData = serializers.toFirestore(
     ItemRecord.serializer,
@@ -74,7 +79,8 @@ Map<String, dynamic> createItemRecordData({
         ..shortBio = shortBio
         ..mediaUrl = null
         ..isDone = isDone
-        ..uid = uid,
+        ..uid = uid
+        ..photoUrl = photoUrl,
     ),
   );
 

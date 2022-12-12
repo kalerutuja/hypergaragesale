@@ -581,17 +581,15 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                       ),
                       FFButtonWidget(
                         onPressed: () async {
-                          final itemCreateData = {
-                            ...createItemRecordData(
-                              itemName: itemNameCreateController!.text,
-                              itemPrice:
-                                  int.tryParse(priceCreateController!.text),
-                              shortBio: shortBioController!.text,
-                              isDone: false,
-                              uid: currentUserUid,
-                            ),
-                            'media_url': [uploadedFileUrl1],
-                          };
+                          final itemCreateData = createItemRecordData(
+                            itemName: itemNameCreateController!.text,
+                            itemPrice:
+                                int.tryParse(priceCreateController!.text),
+                            shortBio: shortBioController!.text,
+                            isDone: false,
+                            uid: currentUserUid,
+                            photoUrl: uploadedFileUrl1,
+                          );
                           await ItemRecord.collection.doc().set(itemCreateData);
 
                           context.pushNamed('BrowseProduct');

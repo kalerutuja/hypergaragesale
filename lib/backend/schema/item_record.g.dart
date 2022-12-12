@@ -61,6 +61,13 @@ class _$ItemRecordSerializer implements StructuredSerializer<ItemRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.photoUrl;
+    if (value != null) {
+      result
+        ..add('photo_url')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -109,6 +116,10 @@ class _$ItemRecordSerializer implements StructuredSerializer<ItemRecord> {
           result.uid = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
+        case 'photo_url':
+          result.photoUrl = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -136,6 +147,8 @@ class _$ItemRecord extends ItemRecord {
   @override
   final String? uid;
   @override
+  final String? photoUrl;
+  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$ItemRecord([void Function(ItemRecordBuilder)? updates]) =>
@@ -148,6 +161,7 @@ class _$ItemRecord extends ItemRecord {
       this.mediaUrl,
       this.isDone,
       this.uid,
+      this.photoUrl,
       this.ffRef})
       : super._();
 
@@ -168,6 +182,7 @@ class _$ItemRecord extends ItemRecord {
         mediaUrl == other.mediaUrl &&
         isDone == other.isDone &&
         uid == other.uid &&
+        photoUrl == other.photoUrl &&
         ffRef == other.ffRef;
   }
 
@@ -177,11 +192,13 @@ class _$ItemRecord extends ItemRecord {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, itemName.hashCode), itemPrice.hashCode),
-                        shortBio.hashCode),
-                    mediaUrl.hashCode),
-                isDone.hashCode),
-            uid.hashCode),
+                    $jc(
+                        $jc($jc($jc(0, itemName.hashCode), itemPrice.hashCode),
+                            shortBio.hashCode),
+                        mediaUrl.hashCode),
+                    isDone.hashCode),
+                uid.hashCode),
+            photoUrl.hashCode),
         ffRef.hashCode));
   }
 
@@ -194,6 +211,7 @@ class _$ItemRecord extends ItemRecord {
           ..add('mediaUrl', mediaUrl)
           ..add('isDone', isDone)
           ..add('uid', uid)
+          ..add('photoUrl', photoUrl)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -227,6 +245,10 @@ class ItemRecordBuilder implements Builder<ItemRecord, ItemRecordBuilder> {
   String? get uid => _$this._uid;
   set uid(String? uid) => _$this._uid = uid;
 
+  String? _photoUrl;
+  String? get photoUrl => _$this._photoUrl;
+  set photoUrl(String? photoUrl) => _$this._photoUrl = photoUrl;
+
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -244,6 +266,7 @@ class ItemRecordBuilder implements Builder<ItemRecord, ItemRecordBuilder> {
       _mediaUrl = $v.mediaUrl?.toBuilder();
       _isDone = $v.isDone;
       _uid = $v.uid;
+      _photoUrl = $v.photoUrl;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -275,6 +298,7 @@ class ItemRecordBuilder implements Builder<ItemRecord, ItemRecordBuilder> {
               mediaUrl: _mediaUrl?.build(),
               isDone: isDone,
               uid: uid,
+              photoUrl: photoUrl,
               ffRef: ffRef);
     } catch (_) {
       late String _$failedField;

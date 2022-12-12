@@ -99,7 +99,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'PostDetailsPage',
               path: 'postDetailsPage',
-              builder: (context, params) => PostDetailsPageWidget(),
+              asyncParams: {
+                'itemRefID': getDoc('item', ItemRecord.serializer),
+              },
+              builder: (context, params) => PostDetailsPageWidget(
+                itemRefID: params.getParam('itemRefID', ParamType.Document),
+              ),
             ),
             FFRoute(
               name: 'ZoomedImage',

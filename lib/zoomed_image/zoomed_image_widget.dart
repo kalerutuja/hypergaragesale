@@ -1,8 +1,10 @@
+import '../flutter_flow/flutter_flow_expanded_image_view.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class ZoomedImageWidget extends StatefulWidget {
   const ZoomedImageWidget({Key? key}) : super(key: key);
@@ -61,6 +63,33 @@ class _ZoomedImageWidgetState extends State<ZoomedImageWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [],
+                ),
+                InkWell(
+                  onTap: () async {
+                    await Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.fade,
+                        child: FlutterFlowExpandedImageView(
+                          image: Image.network(
+                            '',
+                            fit: BoxFit.contain,
+                          ),
+                          allowRotation: false,
+                          useHeroAnimation: false,
+                        ),
+                      ),
+                    );
+                  },
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(12),
+                    child: Image.network(
+                      '',
+                      width: 400,
+                      height: 400,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
               ],
             ),
