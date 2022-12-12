@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "908409143808",
+    "project_id": "hypergaragesale-849b4",
+    "storage_bucket": "hypergaragesale-849b4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:908409143808:android:da84576a577c48865c0ee5",
+        "android_client_info": {
+          "package_name": "com.rutuja"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "908409143808-s85rr4flv1ued56itds8d95dpfb3813d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rutuja",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "908409143808-ss1vfi3nkf08ilg2ghf0e2p3bcocbsv9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADdwnTbzfQnJ3ExCyhTaKjf7Pq5TJsfBk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "908409143808-ss1vfi3nkf08ilg2ghf0e2p3bcocbsv9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "908409143808-nfalhqfhe86p0stch8s8cglkqvc5fad1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.rutuja"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

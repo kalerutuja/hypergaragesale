@@ -1,0 +1,23 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:rxdart/rxdart.dart';
+
+class GarageSaleFirebaseUser {
+  GarageSaleFirebaseUser(this.user);
+  User? user;
+  bool get loggedIn => user != null;
+}
+
+GarageSaleFirebaseUser? currentUser;
+bool get loggedIn => currentUser?.loggedIn ?? false;
+Stream<GarageSaleFirebaseUser> garageSaleFirebaseUserStream() =>
+    FirebaseAuth.instance
+        .authStateChanges()
+        .debounce((user) => user == null && !loggedIn
+            ? TimerStream(true, const Duration(seconds: 1))
+            : Stream.value(user))
+        .map<GarageSaleFirebaseUser>(
+      (user) {
+        currentUser = GarageSaleFirebaseUser(user);
+        return currentUser!;
+      },
+    );

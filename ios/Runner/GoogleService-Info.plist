@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>908409143808-nfalhqfhe86p0stch8s8cglkqvc5fad1.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.908409143808-nfalhqfhe86p0stch8s8cglkqvc5fad1</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>908409143808-s85rr4flv1ued56itds8d95dpfb3813d.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBjUm5dkitYninYY6AUslb4iDhHznCIBRU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>908409143808</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.rutuja</string>
+	<key>PROJECT_ID</key>
+	<string>hypergaragesale-849b4</string>
+	<key>STORAGE_BUCKET</key>
+	<string>hypergaragesale-849b4.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:908409143808:ios:5520aad94bda7a935c0ee5</string>
+</dict>
+</plist>
