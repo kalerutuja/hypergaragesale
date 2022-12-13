@@ -81,7 +81,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0, 0, 0, 60),
                                             child: Text(
-                                              'Enjoy the garage sale here.  Join us for day of full surprise. ',
+                                              'A garage sale too hard to miss!!!!.Build your own garage and Take away the best of the rest :)',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .subtitle1
@@ -100,7 +100,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 0, 120, 80),
+                                        0, 0, 220, 80),
                                     child: FFButtonWidget(
                                       onPressed: () async {
                                         context.pushNamed(
@@ -116,7 +116,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                       },
                                       text: 'Join us',
                                       options: FFButtonOptions(
-                                        width: 230,
+                                        width: 130,
                                         height: 50,
                                         color: Color(0xFFAE8625),
                                         textStyle: FlutterFlowTheme.of(context)
@@ -181,9 +181,9 @@ class _HomepageWidgetState extends State<HomepageWidget> {
             ),
             Image.asset(
               'assets/images/GS.gif',
-              width: 400,
-              height: 400,
-              fit: BoxFit.cover,
+              width: double.infinity,
+              height: 390,
+              fit: BoxFit.fill,
             ),
           ],
         ),

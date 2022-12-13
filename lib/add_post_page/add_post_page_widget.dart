@@ -80,37 +80,10 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
           style: FlutterFlowTheme.of(context).bodyText1.override(
                 fontFamily: 'Poppins',
                 color: FlutterFlowTheme.of(context).black600,
-                fontSize: 18,
+                fontSize: 22,
               ),
         ),
-        actions: [
-          Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 5, 5, 5),
-            child: FFButtonWidget(
-              onPressed: () async {
-                GoRouter.of(context).prepareAuthEvent();
-                await signOut();
-
-                context.goNamedAuth('Homepage', mounted);
-              },
-              text: 'Logout',
-              options: FFButtonOptions(
-                width: 100,
-                height: 40,
-                color: FlutterFlowTheme.of(context).black600,
-                textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                      fontFamily: 'Poppins',
-                      color: Color(0xFFE0B342),
-                    ),
-                borderSide: BorderSide(
-                  color: Colors.transparent,
-                  width: 1,
-                ),
-                borderRadius: BorderRadius.circular(8),
-              ),
-            ),
-          ),
-        ],
+        actions: [],
         centerTitle: true,
         elevation: 20,
       ),
@@ -186,6 +159,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                                 FlutterFlowTheme.of(context).bodyText1.override(
                                       fontFamily: 'Poppins',
                                       color: Color(0xFF4F3804),
+                                      fontSize: 15,
                                     ),
                           ),
                         ),
@@ -252,6 +226,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                               FlutterFlowTheme.of(context).bodyText1.override(
                                     fontFamily: 'Poppins',
                                     color: Color(0xFF4F3804),
+                                    fontSize: 15,
                                   ),
                         ),
                       ),
@@ -265,34 +240,35 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                             hintStyle: FlutterFlowTheme.of(context).bodyText2,
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
+                                color: FlutterFlowTheme.of(context).lineColor,
                                 width: 2,
                               ),
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(0),
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
+                                color: FlutterFlowTheme.of(context).lineColor,
                                 width: 2,
                               ),
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(0),
                             ),
                             errorBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: FlutterFlowTheme.of(context).black600,
                                 width: 2,
                               ),
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(0),
                             ),
                             focusedErrorBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: FlutterFlowTheme.of(context).black600,
                                 width: 2,
                               ),
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(0),
                             ),
+                            filled: true,
+                            fillColor:
+                                FlutterFlowTheme.of(context).primaryBtnText,
                             contentPadding:
                                 EdgeInsetsDirectional.fromSTEB(20, 32, 20, 12),
                           ),
@@ -300,6 +276,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                               FlutterFlowTheme.of(context).bodyText1.override(
                                     fontFamily: 'Poppins',
                                     color: Color(0xFF4F3804),
+                                    fontSize: 15,
                                   ),
                           textAlign: TextAlign.start,
                           maxLines: 4,
@@ -307,7 +284,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -551,7 +528,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 250),
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 220),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -564,7 +541,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                         text: 'Cancel',
                         options: FFButtonOptions(
                           width: 130,
-                          height: 40,
+                          height: 50,
                           color: Color(0xFFAE8625),
                           textStyle: FlutterFlowTheme.of(context)
                               .subtitle2
@@ -600,7 +577,7 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                         text: 'Add Item',
                         options: FFButtonOptions(
                           width: 130,
-                          height: 40,
+                          height: 50,
                           color: Color(0xFFAE8625),
                           textStyle: FlutterFlowTheme.of(context)
                               .subtitle2

@@ -3,7 +3,6 @@ import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -65,37 +64,10 @@ class _BrowseProductWidgetState extends State<BrowseProductWidget> {
           style: FlutterFlowTheme.of(context).bodyText1.override(
                 fontFamily: 'Poppins',
                 color: FlutterFlowTheme.of(context).black600,
-                fontSize: 18,
+                fontSize: 22,
               ),
         ),
-        actions: [
-          Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 5, 5, 5),
-            child: FFButtonWidget(
-              onPressed: () async {
-                GoRouter.of(context).prepareAuthEvent();
-                await signOut();
-
-                context.goNamedAuth('Homepage', mounted);
-              },
-              text: 'Logout',
-              options: FFButtonOptions(
-                width: 100,
-                height: 40,
-                color: FlutterFlowTheme.of(context).black600,
-                textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                      fontFamily: 'Poppins',
-                      color: Color(0xFFE0B342),
-                    ),
-                borderSide: BorderSide(
-                  color: Colors.transparent,
-                  width: 1,
-                ),
-                borderRadius: BorderRadius.circular(8),
-              ),
-            ),
-          ),
-        ],
+        actions: [],
         centerTitle: true,
         elevation: 20,
       ),
@@ -128,7 +100,7 @@ class _BrowseProductWidgetState extends State<BrowseProductWidget> {
                       style: FlutterFlowTheme.of(context).bodyText1.override(
                             fontFamily: 'Poppins',
                             color: FlutterFlowTheme.of(context).black600,
-                            fontSize: 25,
+                            fontSize: 20,
                           ),
                     ),
                   ),
@@ -139,115 +111,131 @@ class _BrowseProductWidgetState extends State<BrowseProductWidget> {
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    StreamBuilder<List<ItemRecord>>(
-                      stream: queryItemRecord(
-                        queryBuilder: (itemRecord) => itemRecord
-                            .where('uid', isEqualTo: currentUserUid)
-                            .orderBy('item_name'),
-                      ),
-                      builder: (context, snapshot) {
-                        // Customize what your widget looks like when it's loading.
-                        if (!snapshot.hasData) {
-                          return Center(
-                            child: SizedBox(
-                              width: 50,
-                              height: 50,
-                              child: CircularProgressIndicator(
-                                color:
-                                    FlutterFlowTheme.of(context).primaryColor,
-                              ),
-                            ),
-                          );
-                        }
-                        List<ItemRecord> taskListColumnItemRecordList =
-                            snapshot.data!;
-                        return Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children:
-                              List.generate(taskListColumnItemRecordList.length,
-                                  (taskListColumnIndex) {
-                            final taskListColumnItemRecord =
-                                taskListColumnItemRecordList[
-                                    taskListColumnIndex];
-                            return Container(
-                              width: 390,
-                              height: 100,
-                              decoration: BoxDecoration(
-                                color: Color(0xEBE8EDF2),
-                                border: Border.all(
-                                  color: Color(0xFFBE8505),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(15, 10, 15, 0),
+                      child: StreamBuilder<List<ItemRecord>>(
+                        stream: queryItemRecord(
+                          queryBuilder: (itemRecord) => itemRecord
+                              .where('uid', isEqualTo: currentUserUid)
+                              .orderBy('item_name'),
+                        ),
+                        builder: (context, snapshot) {
+                          // Customize what your widget looks like when it's loading.
+                          if (!snapshot.hasData) {
+                            return Center(
+                              child: SizedBox(
+                                width: 50,
+                                height: 50,
+                                child: CircularProgressIndicator(
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
                                 ),
                               ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Column(
+                            );
+                          }
+                          List<ItemRecord> taskListColumnItemRecordList =
+                              snapshot.data!;
+                          return Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: List.generate(
+                                taskListColumnItemRecordList.length,
+                                (taskListColumnIndex) {
+                              final taskListColumnItemRecord =
+                                  taskListColumnItemRecordList[
+                                      taskListColumnIndex];
+                              return Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10, 9, 10, 0),
+                                child: Container(
+                                  width: 350,
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                    color: Color(0xEBE8EDF2),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 4,
+                                        color: FlutterFlowTheme.of(context)
+                                            .grayIcon,
+                                        offset: Offset(0, 2),
+                                      )
+                                    ],
+                                    borderRadius: BorderRadius.circular(2),
+                                    border: Border.all(
+                                      color: Color(0xFF805A04),
+                                    ),
+                                  ),
+                                  child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      Text(
-                                        taskListColumnItemRecord.itemName!,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color: Color(0xFFAE8625),
-                                              fontSize: 20,
-                                            ),
+                                      Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Text(
+                                            taskListColumnItemRecord.itemName!,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText1
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: Color(0xFFAE8625),
+                                                  fontSize: 20,
+                                                ),
+                                          ),
+                                          Text(
+                                            taskListColumnItemRecord.itemPrice!
+                                                .toString(),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText1
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: Color(0xFFAE8625),
+                                                ),
+                                          ),
+                                        ],
                                       ),
-                                      Text(
-                                        taskListColumnItemRecord.itemPrice!
-                                            .toString(),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color: Color(0xFFAE8625),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            140, 0, 0, 0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            FlutterFlowIconButton(
+                                              borderColor: Colors.transparent,
+                                              borderRadius: 30,
+                                              borderWidth: 1,
+                                              buttonSize: 60,
+                                              icon: Icon(
+                                                Icons.navigate_next,
+                                                color: Color(0xFFAE8625),
+                                                size: 30,
+                                              ),
+                                              showLoadingIndicator: true,
+                                              onPressed: () async {
+                                                context.pushNamed(
+                                                  'PostDetailsPage',
+                                                  queryParams: {
+                                                    'itemRefID': serializeParam(
+                                                      taskListColumnItemRecord,
+                                                      ParamType.Document,
+                                                    ),
+                                                  }.withoutNulls,
+                                                  extra: <String, dynamic>{
+                                                    'itemRefID':
+                                                        taskListColumnItemRecord,
+                                                  },
+                                                );
+                                              },
                                             ),
+                                          ],
+                                        ),
                                       ),
                                     ],
                                   ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        190, 0, 0, 0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        FlutterFlowIconButton(
-                                          borderColor: Colors.transparent,
-                                          borderRadius: 30,
-                                          borderWidth: 1,
-                                          buttonSize: 60,
-                                          icon: Icon(
-                                            Icons.navigate_next,
-                                            color: Color(0xFFAE8625),
-                                            size: 30,
-                                          ),
-                                          showLoadingIndicator: true,
-                                          onPressed: () async {
-                                            context.pushNamed(
-                                              'PostDetailsPage',
-                                              queryParams: {
-                                                'itemRefID': serializeParam(
-                                                  taskListColumnItemRecord,
-                                                  ParamType.Document,
-                                                ),
-                                              }.withoutNulls,
-                                              extra: <String, dynamic>{
-                                                'itemRefID':
-                                                    taskListColumnItemRecord,
-                                              },
-                                            );
-                                          },
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            );
-                          }),
-                        );
-                      },
+                                ),
+                              );
+                            }),
+                          );
+                        },
+                      ),
                     ),
                   ],
                 ),

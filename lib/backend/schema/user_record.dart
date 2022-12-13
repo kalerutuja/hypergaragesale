@@ -27,6 +27,8 @@ abstract class UserRecord implements Built<UserRecord, UserRecordBuilder> {
 
   String? get password;
 
+  LatLng? get location;
+
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
@@ -67,6 +69,7 @@ Map<String, dynamic> createUserRecordData({
   DateTime? createdTime,
   String? phoneNumber,
   String? password,
+  LatLng? location,
 }) {
   final firestoreData = serializers.toFirestore(
     UserRecord.serializer,
@@ -78,7 +81,8 @@ Map<String, dynamic> createUserRecordData({
         ..uid = uid
         ..createdTime = createdTime
         ..phoneNumber = phoneNumber
-        ..password = password,
+        ..password = password
+        ..location = location,
     ),
   );
 

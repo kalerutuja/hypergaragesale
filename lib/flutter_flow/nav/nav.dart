@@ -105,6 +105,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => PostDetailsPageWidget(
                 itemRefID: params.getParam('itemRefID', ParamType.Document),
               ),
+            ),
+            FFRoute(
+              name: 'LocationPage',
+              path: 'locationPage',
+              builder: (context, params) => LocationPageWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),
