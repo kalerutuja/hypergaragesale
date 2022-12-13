@@ -105,11 +105,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => PostDetailsPageWidget(
                 itemRefID: params.getParam('itemRefID', ParamType.Document),
               ),
-            ),
-            FFRoute(
-              name: 'ZoomedImage',
-              path: 'zoomedImage',
-              builder: (context, params) => ZoomedImageWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),

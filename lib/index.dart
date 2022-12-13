@@ -5,4 +5,3 @@ export 'browse_product/browse_product_widget.dart' show BrowseProductWidget;
 export 'add_post_page/add_post_page_widget.dart' show AddPostPageWidget;
 export 'post_details_page/post_details_page_widget.dart'
     show PostDetailsPageWidget;
-export 'zoomed_image/zoomed_image_widget.dart' show ZoomedImageWidget;

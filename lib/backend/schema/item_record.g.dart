@@ -68,6 +68,27 @@ class _$ItemRecordSerializer implements StructuredSerializer<ItemRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.photUrl1;
+    if (value != null) {
+      result
+        ..add('phot_url1')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.photoUrl2;
+    if (value != null) {
+      result
+        ..add('photo_url2')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.photoUrl3;
+    if (value != null) {
+      result
+        ..add('photo_url3')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -120,6 +141,18 @@ class _$ItemRecordSerializer implements StructuredSerializer<ItemRecord> {
           result.photoUrl = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
+        case 'phot_url1':
+          result.photUrl1 = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'photo_url2':
+          result.photoUrl2 = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'photo_url3':
+          result.photoUrl3 = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -149,6 +182,12 @@ class _$ItemRecord extends ItemRecord {
   @override
   final String? photoUrl;
   @override
+  final String? photUrl1;
+  @override
+  final String? photoUrl2;
+  @override
+  final String? photoUrl3;
+  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$ItemRecord([void Function(ItemRecordBuilder)? updates]) =>
@@ -162,6 +201,9 @@ class _$ItemRecord extends ItemRecord {
       this.isDone,
       this.uid,
       this.photoUrl,
+      this.photUrl1,
+      this.photoUrl2,
+      this.photoUrl3,
       this.ffRef})
       : super._();
 
@@ -183,6 +225,9 @@ class _$ItemRecord extends ItemRecord {
         isDone == other.isDone &&
         uid == other.uid &&
         photoUrl == other.photoUrl &&
+        photUrl1 == other.photUrl1 &&
+        photoUrl2 == other.photoUrl2 &&
+        photoUrl3 == other.photoUrl3 &&
         ffRef == other.ffRef;
   }
 
@@ -193,12 +238,20 @@ class _$ItemRecord extends ItemRecord {
             $jc(
                 $jc(
                     $jc(
-                        $jc($jc($jc(0, itemName.hashCode), itemPrice.hashCode),
-                            shortBio.hashCode),
-                        mediaUrl.hashCode),
-                    isDone.hashCode),
-                uid.hashCode),
-            photoUrl.hashCode),
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc($jc(0, itemName.hashCode),
+                                            itemPrice.hashCode),
+                                        shortBio.hashCode),
+                                    mediaUrl.hashCode),
+                                isDone.hashCode),
+                            uid.hashCode),
+                        photoUrl.hashCode),
+                    photUrl1.hashCode),
+                photoUrl2.hashCode),
+            photoUrl3.hashCode),
         ffRef.hashCode));
   }
 
@@ -212,6 +265,9 @@ class _$ItemRecord extends ItemRecord {
           ..add('isDone', isDone)
           ..add('uid', uid)
           ..add('photoUrl', photoUrl)
+          ..add('photUrl1', photUrl1)
+          ..add('photoUrl2', photoUrl2)
+          ..add('photoUrl3', photoUrl3)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -249,6 +305,18 @@ class ItemRecordBuilder implements Builder<ItemRecord, ItemRecordBuilder> {
   String? get photoUrl => _$this._photoUrl;
   set photoUrl(String? photoUrl) => _$this._photoUrl = photoUrl;
 
+  String? _photUrl1;
+  String? get photUrl1 => _$this._photUrl1;
+  set photUrl1(String? photUrl1) => _$this._photUrl1 = photUrl1;
+
+  String? _photoUrl2;
+  String? get photoUrl2 => _$this._photoUrl2;
+  set photoUrl2(String? photoUrl2) => _$this._photoUrl2 = photoUrl2;
+
+  String? _photoUrl3;
+  String? get photoUrl3 => _$this._photoUrl3;
+  set photoUrl3(String? photoUrl3) => _$this._photoUrl3 = photoUrl3;
+
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -267,6 +335,9 @@ class ItemRecordBuilder implements Builder<ItemRecord, ItemRecordBuilder> {
       _isDone = $v.isDone;
       _uid = $v.uid;
       _photoUrl = $v.photoUrl;
+      _photUrl1 = $v.photUrl1;
+      _photoUrl2 = $v.photoUrl2;
+      _photoUrl3 = $v.photoUrl3;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -299,6 +370,9 @@ class ItemRecordBuilder implements Builder<ItemRecord, ItemRecordBuilder> {
               isDone: isDone,
               uid: uid,
               photoUrl: photoUrl,
+              photUrl1: photUrl1,
+              photoUrl2: photoUrl2,
+              photoUrl3: photoUrl3,
               ffRef: ffRef);
     } catch (_) {
       late String _$failedField;

@@ -61,7 +61,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 270, 0, 0),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 340, 0, 0),
                       child: InkWell(
                         onTap: () async {
                           context.pushNamed('BrowseProduct');
@@ -74,7 +74,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                               TabBar(
                                 isScrollable: true,
                                 labelColor:
-                                    FlutterFlowTheme.of(context).black600,
+                                    FlutterFlowTheme.of(context).tertiaryColor,
+                                unselectedLabelColor:
+                                    FlutterFlowTheme.of(context).gray600,
                                 labelPadding: EdgeInsetsDirectional.fromSTEB(
                                     24, 0, 24, 30),
                                 labelStyle:
@@ -106,7 +108,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    20, 0, 20, 0),
+                                                    20, 0, 20, 10),
                                             child: TextFormField(
                                               controller:
                                                   emailAddressController,
@@ -435,7 +437,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    20, 20, 20, 0),
+                                                    20, 0, 20, 0),
                                             child: TextFormField(
                                               controller:
                                                   emailAddressCreateController,
@@ -620,7 +622,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0, 24, 0, 0),
+                                                    0, 30, 0, 0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
                                                 GoRouter.of(context)

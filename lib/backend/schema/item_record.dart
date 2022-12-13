@@ -29,6 +29,15 @@ abstract class ItemRecord implements Built<ItemRecord, ItemRecordBuilder> {
   @BuiltValueField(wireName: 'photo_url')
   String? get photoUrl;
 
+  @BuiltValueField(wireName: 'phot_url1')
+  String? get photUrl1;
+
+  @BuiltValueField(wireName: 'photo_url2')
+  String? get photoUrl2;
+
+  @BuiltValueField(wireName: 'photo_url3')
+  String? get photoUrl3;
+
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
@@ -40,7 +49,10 @@ abstract class ItemRecord implements Built<ItemRecord, ItemRecordBuilder> {
     ..mediaUrl = ListBuilder()
     ..isDone = false
     ..uid = ''
-    ..photoUrl = '';
+    ..photoUrl = ''
+    ..photUrl1 = ''
+    ..photoUrl2 = ''
+    ..photoUrl3 = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('item');
@@ -69,6 +81,9 @@ Map<String, dynamic> createItemRecordData({
   bool? isDone,
   String? uid,
   String? photoUrl,
+  String? photUrl1,
+  String? photoUrl2,
+  String? photoUrl3,
 }) {
   final firestoreData = serializers.toFirestore(
     ItemRecord.serializer,
@@ -80,7 +95,10 @@ Map<String, dynamic> createItemRecordData({
         ..mediaUrl = null
         ..isDone = isDone
         ..uid = uid
-        ..photoUrl = photoUrl,
+        ..photoUrl = photoUrl
+        ..photUrl1 = photUrl1
+        ..photoUrl2 = photoUrl2
+        ..photoUrl3 = photoUrl3,
     ),
   );
 

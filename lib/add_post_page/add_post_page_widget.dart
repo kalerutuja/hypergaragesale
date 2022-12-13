@@ -589,6 +589,9 @@ class _AddPostPageWidgetState extends State<AddPostPageWidget> {
                             isDone: false,
                             uid: currentUserUid,
                             photoUrl: uploadedFileUrl1,
+                            photUrl1: uploadedFileUrl2,
+                            photoUrl3: uploadedFileUrl4,
+                            photoUrl2: uploadedFileUrl3,
                           );
                           await ItemRecord.collection.doc().set(itemCreateData);
 

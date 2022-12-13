@@ -139,116 +139,6 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                   ),
                                 ],
                               ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    12, 12, 12, 12),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Expanded(
-                                      child: Align(
-                                        alignment:
-                                            AlignmentDirectional(0, -0.65),
-                                        child: Image.asset(
-                                          'assets/images/GS.gif',
-                                          width: 500,
-                                          height: 500,
-                                          fit: BoxFit.fill,
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          16, 8, 16, 0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Align(
-                                            alignment: AlignmentDirectional(
-                                                -0.05, -0.05),
-                                            child: Text(
-                                              'Header Two',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .title2
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            Color(0xFF131110),
-                                                      ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          16, 8, 16, 0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Expanded(
-                                            child: Text(
-                                              'Enjoy the garage sale here.  Join us for day of full surprise. ',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyText2,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    12, 12, 12, 12),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Image.asset(
-                                      'assets/images/illi_1@2x.png',
-                                      width: 300,
-                                      height: 300,
-                                      fit: BoxFit.cover,
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          16, 8, 16, 0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Text(
-                                            'Welcome to Garage Sale',
-                                            style: FlutterFlowTheme.of(context)
-                                                .title2,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          16, 8, 16, 0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Expanded(
-                                            child: Text(
-                                              'Lorem',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyText2,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
                             ],
                           ),
                         ),
@@ -260,7 +150,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                             child: smooth_page_indicator.SmoothPageIndicator(
                               controller: pageViewController ??=
                                   PageController(initialPage: 0),
-                              count: 3,
+                              count: 1,
                               axisDirection: Axis.horizontal,
                               onDotClicked: (i) {
                                 pageViewController!.animateToPage(
@@ -291,7 +181,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
             ),
             Image.asset(
               'assets/images/GS.gif',
-              width: double.infinity,
+              width: 400,
               height: 400,
               fit: BoxFit.cover,
             ),
